@@ -1,0 +1,17 @@
+---
+all:
+  hosts:
+    mgmt:
+      ansible_host: 192.168.10.10
+
+  children:
+    slotmachines:
+      hosts:
+        slotmachine:
+          ansible_host: 192.168.10.11
+        slotmachine_production:
+          ansible_host: 192.168.10.12
+    jenkins:
+      hosts:    
+        jenkinsmachine:
+          ansible_host: 192.168.10.13

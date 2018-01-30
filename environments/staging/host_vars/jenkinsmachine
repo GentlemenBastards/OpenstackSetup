@@ -1,0 +1,15 @@
+flavor: cpu1-ram4096-disk20
+image: a560499c-18fc-416f-b81b-acc3b880c543
+public_ip: true
+security_groups: default,ssh
+
+
+jenkins_user: admin
+jenkins_password: admin
+jenkins_plugins:
+  - post-completed-build-result
+  - junit-attachments
+  - github
+  - git
+  - junit
+  - github-oauth

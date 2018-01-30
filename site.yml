@@ -1,0 +1,24 @@
+---
+  - hosts: all
+    become: yes
+    roles:
+     - common
+
+  - hosts: slotmachine
+    become: yes
+    roles:
+     - node
+     - docker
+
+  - hosts: slotmachine_db
+    become: yes
+    roles:
+      - mongodb
+
+  - hosts: jenkins
+    become: yes
+    roles:
+      - role: geerlingguy.java
+      - role: geerlingguy.jenkins
+      - jenkinssetup
+      - node
