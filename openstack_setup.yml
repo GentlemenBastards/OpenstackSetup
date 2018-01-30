@@ -85,6 +85,30 @@
       port_range_max: 22
       remote_ip_prefix: 0.0.0.0/0
 
+  - name: Create security group RDP
+    os_security_group:
+      auth:
+        auth_url: "{{ auth_url }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        project_name: "{{ project }}"
+      name: RDP
+      state: present
+      description: Security group for allowing incoming RDP connections
+
+  - name: Add RDP rule to security group RDP
+    os_security_group_rule:
+      auth:
+        auth_url: "{{ auth_url }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        project_name: "{{ project }}"
+      security_group: RDP
+      protocol: tcp
+      port_range_min: 3389
+      port_range_max: 3389
+      remote_ip_prefix: 0.0.0.0/0
+
   - name: Create security group http
     os_security_group:
       auth:
