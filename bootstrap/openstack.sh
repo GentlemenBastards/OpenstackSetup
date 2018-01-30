@@ -9,14 +9,4 @@ chmod 700 ~/.ssh/GB-OS-key
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/GB-OS-key
 
-
-
-# . pipcd and enter password
-# eval `ssh-agent -s`
-# copy GB to .ssh flder
-# chmod 700 GB file 
-# ssh-add ....
-
-#  VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
-
-# pip install shade
+echo "cd /vagrant_projects/my-project" >> /home/vagrant/.bashrc
