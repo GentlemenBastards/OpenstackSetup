@@ -2,18 +2,24 @@
 
 Does the initial setup of OpenStack with network, subnet and a control machine for Ansible
 
-## Public key
+### Public key
 Create a folder: keys and place the GB-OS-key file within.
 
-## Vagrant up...
+### Vagrant up...
 Vagrant up
 
-## Run ansible playbook
+### Run ansible playbook for initial setup (network, management machine, security groups...)
 ansible-playbook openstack_setup.yml -i environments/staging/inventory.yml
-When this is done control machine is created within Openstack and there are no point using this machine until it has to be teared down/rebuilt.
+### Run ansible playbook for jenkins, staging and production
+ansible-playbook openstack_compute.yml -i environments/staging/inventory.yml
 
-## Problems starting vagrant with git bash?
+
+### Missing console prompt git bash?
 VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
 
-## Feature to add
-- teardown?
+### Openstack CLI commands
+openstack server list
+nova get-password staging /vagrant/keys/GB-OS-key
+
+Prosivion windows http://blog.rolpdog.com/2015/09/manage-stock-windows-amis-with-ansible.html
+

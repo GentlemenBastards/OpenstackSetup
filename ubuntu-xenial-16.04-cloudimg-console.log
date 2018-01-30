@@ -598,4 +598,50 @@ Starting Remount Root and Kernel File Systems...
 
 Ubuntu 16.04.3 LTS ubuntu-xenial ttyS0
 
-ubuntu-xenial login: 
+ubuntu-xenial login: [ 2181.456869] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2181.456869]   Tx Queue             <0>
+[ 2181.456869]   TDH                  <9b>
+[ 2181.456869]   TDT                  <9d>
+[ 2181.456869]   next_to_use          <9d>
+[ 2181.456869]   next_to_clean        <9b>
+[ 2181.456869] buffer_info[next_to_clean]
+[ 2181.456869]   time_stamp           <10006f78a>
+[ 2181.456869]   next_to_watch        <9c>
+[ 2181.456869]   jiffies              <10006f9be>
+[ 2181.456869]   next_to_watch.status <0>
+[ 2184.189538] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2184.189538]   Tx Queue             <0>
+[ 2184.189538]   TDH                  <9b>
+[ 2184.189538]   TDT                  <9d>
+[ 2184.189538]   next_to_use          <9d>
+[ 2184.189538]   next_to_clean        <9b>
+[ 2184.189538] buffer_info[next_to_clean]
+[ 2184.189538]   time_stamp           <10006f78a>
+[ 2184.189538]   next_to_watch        <9c>
+[ 2184.189538]   jiffies              <10006fc69>
+[ 2184.189538]   next_to_watch.status <0>
+[ 2185.653488] e1000 0000:00:03.0 enp0s3: Reset adapter
+[ 2185.882039] e1000 0000:00:03.0 enp0s3: Reset adapter
+[ 2188.102544] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2188.102544]   Tx Queue             <0>
+[ 2188.102544]   TDH                  <0>
+[ 2188.102544]   TDT                  <1>
+[ 2188.102544]   next_to_use          <1>
+[ 2188.102544]   next_to_clean        <0>
+[ 2188.102544] buffer_info[next_to_clean]
+[ 2188.102544]   time_stamp           <10006fe59>
+[ 2188.102544]   next_to_watch        <0>
+[ 2188.102544]   jiffies              <10007003c>
+[ 2188.102544]   next_to_watch.status <0>
+[ 2191.635709] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2191.635709]   Tx Queue             <0>
+[ 2191.635709]   TDH                  <0>
+[ 2191.635709]   TDT                  <1>
+[ 2191.635709]   next_to_use          <1>
+[ 2191.635709]   next_to_clean        <0>
+[ 2191.635709] buffer_info[next_to_clean]
+[ 2191.635709]   time_stamp           <10006fe59>
+[ 2191.635709]   next_to_watch        <0>
+[ 2191.635709]   jiffies              <1000703b0>
+[ 2191.635709]   next_to_watch.status <0>
+[ 2194.657473] e1000 0000:00:03.0 enp0s3: Reset adapter

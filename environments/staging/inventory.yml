@@ -5,11 +5,11 @@ all:
       ansible_host: 192.168.10.10
 
   children:
-    slotmachines:
+    winserver:
       hosts:
-        slotmachine:
+        staging:
           ansible_host: 192.168.10.11
-        slotmachine_production:
+        production:
           ansible_host: 192.168.10.12
     jenkins:
       hosts:    
