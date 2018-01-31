@@ -13,6 +13,8 @@ ansible-playbook openstack_setup.yml -i environments/staging/inventory.yml
 ### Run ansible playbook for jenkins, staging and production
 ansible-playbook openstack_compute.yml -i environments/staging/inventory.yml
 
+### For windows test instance run
+ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml
 
 ### Missing console prompt git bash?
 VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
