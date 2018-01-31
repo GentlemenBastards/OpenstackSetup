@@ -16,6 +16,9 @@ ansible-playbook openstack_compute.yml -i environments/staging/inventory.yml
 ### For windows test instance run
 ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml
 
+### Ansible on windows
+ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml
+
 ### Missing console prompt git bash?
 VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
 

@@ -46,7 +46,7 @@
           auto_ip: "{{ hostvars[item]['public_ip'] }}"
           userdata: |
             {%- raw -%}#ps1
-            Set-Content -Path "C:\test.txt" -Value "Hello OpenStack instance"
+            net user Administrator P@ssw0rd
             {%- endraw -%}
         when: item != "mgmt"
         with_items: "{{ groups['all'] }}"
