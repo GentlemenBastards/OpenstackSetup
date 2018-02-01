@@ -41,4 +41,3 @@ $file = "$env:SystemDrive\temp\ConfigureRemotingForAnsible.ps1"
 powershell.exe -ExecutionPolicy ByPass -File $file
 ```
 
-Maybe it has to join domain? test to make sure...
