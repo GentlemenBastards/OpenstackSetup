@@ -28,3 +28,7 @@ nova get-password staging /vagrant/keys/GB-OS-key
 
 Prosivion windows http://blog.rolpdog.com/2015/09/manage-stock-windows-amis-with-ansible.html
 
+### Windows ansible host settings:
+run the following script...
+
+Maybe it has to join domain? test to make sure...
