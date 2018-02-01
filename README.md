@@ -6,7 +6,7 @@ Does the initial setup of OpenStack with network, subnet and a control machine f
 Create a folder: keys and place the GB-OS-key file within.
 
 ### Vagrant up...
-Vagrant up
+`Vagrant up`
 
 ### Run ansible playbook for initial setup (network, management machine, security groups...)
 ansible-playbook openstack_setup.yml -i environments/staging/inventory.yml
