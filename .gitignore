@@ -5,4 +5,4 @@
 # Sensitive information
 /keys
 
-.vagrant
+/.vagrant
