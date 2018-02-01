@@ -1,6 +1,8 @@
 *.retry
 .idea
-.log
+*.log
 
 # Sensitive information
 /keys
+
+.vagrant
