@@ -18,7 +18,7 @@ Create a folder: keys and place the GB-OS-key file within.
 `ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml`
 
 ### Ansible on windows
-`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml`
+`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml`  
 `ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<Administrator password>"`
 
 ### Missing console prompt git bash?
