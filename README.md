@@ -25,7 +25,7 @@ Create a folder: keys and place the GB-OS-key file within.
 `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`
 
 ### Openstack CLI commands
-`openstack server list`
+`openstack server list`  
 `nova get-password staging /vagrant/keys/GB-OS-key`
 
 Prosivion windows http://blog.rolpdog.com/2015/09/manage-stock-windows-amis-with-ansible.html
