@@ -1,4 +1,4 @@
 flavor: cpu2-ram2048-disk20
-image: 55e85d0d-7464-40b4-8eec-5047afe79f79
+image: 397d0fef-1332-468b-8d34-569a2911a9ad
 public_ip: true
-security_groups: default,RDP
+security_groups: default,RDP,WinRM,http

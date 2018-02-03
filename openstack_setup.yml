@@ -133,6 +133,30 @@
       port_range_max: 3000
       remote_ip_prefix: 0.0.0.0/0
 
+  - name: Create security group WinRM
+    os_security_group:
+      auth:
+        auth_url: "{{ auth_url }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        project_name: "{{ project }}"
+      name: WinRM
+      state: present
+      description: Security group for allowing incoming WinRM connections
+
+  - name: Add WinRM rule to security group WinRM
+    os_security_group_rule:
+      auth:
+        auth_url: "{{ auth_url }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        project_name: "{{ project }}"
+      security_group: WinRM
+      protocol: tcp
+      port_range_min: 5985
+      port_range_max: 5986
+      remote_ip_prefix: 0.0.0.0/0
+
   - name: Create port
     os_port:
       auth:

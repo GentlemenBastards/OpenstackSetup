@@ -1,0 +1,42 @@
+---
+  - name: Ensure IIS webserver is installed
+    win_feature:
+      name: Web-Server
+      state: present
+
+  - name: chocolatey install .net FW 4.5.2
+    win_chocolatey:
+      name: dotnet4.5
+      state: present
+
+  - name: chocolatey install .net FW 4.6.1
+    win_chocolatey:
+      name: dotnet4.6.1
+      state: present
+
+  - name: Deploy default iisstart.htm file
+    template:
+      src: iisstart.j2
+      dest: c:\inetpub\wwwroot\iisstart.htm
+
+  # - name: Check for updates
+  #   win_updates:
+  #     register: update_result
+    
+  # - name: Reboot if needed  
+  #   win_reboot:
+  #     when: update_result.reboot_required
+  
+  - name: Reboot
+    win_reboot:
+
+  - name: Download appVeyor deployment agent
+    win_shell: (new-object net.webclient).DownloadFile('https://www.appveyor.com/downloads/deployment-agent/latest/AppveyorDeploymentAgent.msi', 'AppveyorDeploymentAgent.msi')
+    args:
+      chdir: c:\
+      creates: c:\AppveyorDeploymentAgent.msi
+
+  - name: Install appVeyor deployment agent
+    win_shell: msiexec /i AppveyorDeploymentAgent.msi /quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY="test234234234" DEPLOYMENT_GROUP="testgroup" >> c:\AppveyorDeploymentAgent.log
+    args:
+      chdir: c:\

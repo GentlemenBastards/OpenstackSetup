@@ -18,14 +18,15 @@ Create a folder: keys and place the GB-OS-key file within.
 `ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml`
 
 ### Ansible on windows
-`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml`
-`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<Administrator password>"`
+`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml`  
+`ansible-playbook playbook-install-firefox.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<PASSWORD>"`  
+`ansible-playbook site.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<PASSWORD>"`
 
 ### Missing console prompt git bash?
 `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`
 
 ### Openstack CLI commands
-`openstack server list`
+`openstack server list`  
 `nova get-password staging /vagrant/keys/GB-OS-key`
 
 Prosivion windows http://blog.rolpdog.com/2015/09/manage-stock-windows-amis-with-ansible.html
@@ -41,3 +42,5 @@ $file = "$env:SystemDrive\temp\ConfigureRemotingForAnsible.ps1"
 powershell.exe -ExecutionPolicy ByPass -File $file
 ```
 
+### Openstack WS2012R2 Ansible image
+Currently the only thing done to this image is initial setup of Administrator since we couldn't connect with RDP without it. And the initial Ansible script is run. This should be done through userdata or packer/cloudbase init instead which I so far haven't managed.
