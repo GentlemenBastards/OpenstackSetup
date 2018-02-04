@@ -1,0 +1,21 @@
+---
+  # - hosts: all
+  #   become: yes
+  #   roles:
+  #    - common
+
+  - hosts: staging
+    roles:
+     - webserver
+
+  - hosts: production
+    roles:
+     - webserver
+
+  - hosts: jenkins
+    become: yes
+    roles:
+      # - role: geerlingguy.java
+      # - role: geerlingguy.jenkins
+      - jenkinssetup
+      - node

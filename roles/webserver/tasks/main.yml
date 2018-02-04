@@ -1,8 +1,22 @@
 ---
-  - name: Ensure IIS webserver is installed
+  
+  # [DEPRECATION WARNING]: The 'restart' parameter causes instability. Use the
+  # 'win_reboot' action conditionally on 'reboot_required' return value instead.
+  # This feature will be removed in version 2.6. Deprecation warnings can be
+  # disabled by setting deprecation_warnings=False in ansible.cfg.
+  
+  - name: Install IIS Web-Server with sub features and management tools
     win_feature:
       name: Web-Server
       state: present
+      #restart: True
+      include_sub_features: True
+      include_management_tools: True
+
+  - name: Install ASPNET 4.5
+    win_feature:
+      name: NET-Framework-45-ASPNET
+      state: present       
 
   - name: chocolatey install .net FW 4.5.2
     win_chocolatey:
@@ -19,6 +33,7 @@
       src: iisstart.j2
       dest: c:\inetpub\wwwroot\iisstart.htm
 
+  # TODO Only reboot if necessary (see above...)
   - name: Reboot
     win_reboot:
 
@@ -28,7 +43,13 @@
       chdir: c:\
       creates: c:\AppveyorDeploymentAgent.msi
 
+  # - name: Check if appVeyor agent is installed
+  #   win_service:
+  #     name: Appveyor.DeploymentAgent
+  #     register: service_info
+
   - name: Install appVeyor deployment agent
     win_shell: msiexec /i AppveyorDeploymentAgent.msi /quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY="test234234234" DEPLOYMENT_GROUP="testgroup" >> c:\AppveyorDeploymentAgent.log
     args:
       chdir: c:\
+      creates: install.log

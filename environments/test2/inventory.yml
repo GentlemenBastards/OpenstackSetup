@@ -3,3 +3,5 @@ all:
   hosts:
     staging:
       ansible_host: 194.47.174.13
+    production:
+      ansible_host: 194.47.174.37
