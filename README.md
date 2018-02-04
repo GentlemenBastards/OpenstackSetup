@@ -18,7 +18,7 @@ Create a folder: keys and place the GB-OS-key file within.
 `ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml`
 
 ### Ansible on windows
-`ansible-playbook site.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<PASSWORD>"`  
+`ansible-playbook openstack_provision.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<PASSWORD>"`  
 
 ### Missing console prompt git bash?
 `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`
