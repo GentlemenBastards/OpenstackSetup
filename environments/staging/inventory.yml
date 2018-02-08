@@ -1,17 +1,21 @@
 ---
 all:
-  hosts:
-    mgmt:
-      ansible_host: 192.168.10.10
-
   children:
-    winserver:
+    linux:
       hosts:
-        staging:
-          ansible_host: 192.168.10.11
-        production:
-          ansible_host: 192.168.10.12
-    jenkins:
-      hosts:    
-        jenkinsmachine:
-          ansible_host: 192.168.10.13
+        mgmt:
+          ansible_host: 192.168.10.10  
+        jira:
+          ansible_host: 192.168.10.13    
+    windows:
+      children:      
+        win_server:
+          hosts:
+            staging:
+              ansible_host: 192.168.10.11
+            production:
+              ansible_host: 192.168.10.12
+        win_db:
+          hosts:
+            stag_prod_db:
+              ansible_host: 192.168.10.14
