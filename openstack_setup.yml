@@ -195,8 +195,8 @@
         sudo apt-get -y install python-pip
         sudo pip install shade
         sudo pip install "pywinrm>=0.2.2"
-        sudo ansible-galaxy install geerlingguy.java
-        sudo ansible-galaxy install geerlingguy.jenkins
+        sudo ansible-galaxy install antonchernik.atlassian-jira
+        sudo ansible-galaxy install lifeofguenter.mssql
         touch /home/ubuntu/done
         {% endraw %}
       security_groups: "{{ hostvars[ansible]['security_groups'] }}"

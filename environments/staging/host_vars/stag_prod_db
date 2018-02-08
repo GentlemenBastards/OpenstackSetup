@@ -1,4 +1,7 @@
 flavor: cpu2-ram2048-disk20
-image: 397d0fef-1332-468b-8d34-569a2911a9ad
+image: a560499c-18fc-416f-b81b-acc3b880c543
 public_ip: true
-security_groups: default,RDP,WinRM,http
+security_groups: default
+
+mssql_sa_password: testingSuperComplexPass3w348908
+mssql_memory_memorylimitmb: "{{ (ansible_memtotal_mb * 0.8) | round | int }}"

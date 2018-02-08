@@ -12,10 +12,12 @@
     roles:
      - webserver
 
-  - hosts: jenkins
+  - hosts: stag_prod_db
     become: yes
     roles:
-      # - role: geerlingguy.java
-      # - role: geerlingguy.jenkins
-      - jenkinssetup
-      - node
+     - { role: lifeofguenter.mssql }
+     
+  - hosts: jira
+    become: yes
+    roles:
+      - roles: antonchernik.atlassian-jira

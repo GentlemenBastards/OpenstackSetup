@@ -6,7 +6,10 @@ all:
         mgmt:
           ansible_host: 192.168.10.10  
         jira:
-          ansible_host: 192.168.10.13    
+          ansible_host: 192.168.10.13
+        stag_prod_db:
+          ansible_host: 192.168.10.14  
+
     windows:
       children:      
         win_server:
@@ -15,7 +18,7 @@ all:
               ansible_host: 192.168.10.11
             production:
               ansible_host: 192.168.10.12
-        win_db:
-          hosts:
-            stag_prod_db:
-              ansible_host: 192.168.10.14
+        # win_db:
+        #   hosts:
+        #     stag_prod_db:
+        #       ansible_host: 192.168.10.14
