@@ -1,0 +1,3 @@
+ansible_user: ubuntu
+mssql_sa_password: testingSuperComplexPass3w348908
+mssql_memory_memorylimitmb: "{{ (ansible_memtotal_mb * 0.8) | round | int }}"

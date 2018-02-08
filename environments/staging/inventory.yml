@@ -4,11 +4,14 @@ all:
     linux:
       hosts:
         mgmt:
-          ansible_host: 192.168.10.10  
+          ansible_host: 192.168.10.10
+          ansible_user: ubuntu
         jira:
           ansible_host: 192.168.10.13
+          ansible_user: ubuntu
         stag_prod_db:
-          ansible_host: 192.168.10.14  
+          ansible_host: 192.168.10.14
+          ansible_user: ubuntu
 
     windows:
       children:      
@@ -18,7 +21,3 @@ all:
               ansible_host: 192.168.10.11
             production:
               ansible_host: 192.168.10.12
-        # win_db:
-        #   hosts:
-        #     stag_prod_db:
-        #       ansible_host: 192.168.10.14

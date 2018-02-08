@@ -1,8 +1,15 @@
 ---
-  # - hosts: all
+  # - hosts: stag_prod_db
   #   become: yes
   #   roles:
-  #    - common
+  #     - common
+  #     #- lifeofguenter.mssql
+     
+  - hosts: jira
+    become: yes
+    roles:
+      - common
+      - antonchernik.atlassian-jira
 
   - hosts: staging
     roles:
@@ -12,12 +19,4 @@
     roles:
      - webserver
 
-  - hosts: stag_prod_db
-    become: yes
-    roles:
-     - { role: lifeofguenter.mssql }
-     
-  - hosts: jira
-    become: yes
-    roles:
-      - roles: antonchernik.atlassian-jira
+  

@@ -17,7 +17,3 @@ all:
               ansible_host: 194.47.174.13
             production:
               ansible_host: 194.47.174.37
-        # win_db:
-        #   hosts:
-        #     stag_prod_db:
-        #       ansible_host: 192.168.10.14
