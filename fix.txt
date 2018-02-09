@@ -1,0 +1,13 @@
+[X] add key for vagrant user not root!!!
+[X] start eval agent
+[X] add ssh key
+---
+[X] turn of known host checking in ansible
+[X] otherwise we have to connect if it wants to ask to add to host...
+[X] why doesn't it ask in vagrant???
+---
+[ ] cleanup 
+---
+[ ] fix the bad mssql role
+---
+[ ] fix jira

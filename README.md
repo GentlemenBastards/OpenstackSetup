@@ -14,9 +14,6 @@ Create a folder: keys and place the GB-OS-key file within.
 ### Run ansible playbook for jenkins, staging and production
 `ansible-playbook openstack_compute.yml -i environments/staging/inventory.yml`
 
-### For windows test instance run
-`ansible-playbook openstack_windows_test.yml -i environments/test/inventory.yml`
-
 ### Ansible on windows
 `ansible-playbook openstack_provision.yml -i environments/test2/inventory.yml --extra-vars "ansible_password=<PASSWORD>"`  
 
