@@ -2,5 +2,5 @@
 
 cp /vagrant/keys/GB-OS-key ~/.ssh/
 chmod 700 ~/.ssh/GB-OS-key
-
+ansible-galaxy install antonchernik.atlassian-jira
 

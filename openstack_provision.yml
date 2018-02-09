@@ -1,9 +1,9 @@
 ---
-  # - hosts: stag_prod_db
-  #   become: yes
-  #   roles:
-  #     - common
-  #     #- lifeofguenter.mssql
+  - hosts: stag_prod_db
+    become: yes
+    roles:
+      - common
+      #- lifeofguenter.mssql
      
   - hosts: jira
     become: yes

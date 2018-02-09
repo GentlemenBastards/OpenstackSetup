@@ -53,3 +53,8 @@
     args:
       chdir: c:\
       creates: install.log
+
+  - name: Remove Default Web Site
+    win_iis_website:
+      name: "Default Web Site"
+      state: absent
