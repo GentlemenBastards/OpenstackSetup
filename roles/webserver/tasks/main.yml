@@ -49,7 +49,7 @@
   #     register: service_info
 
   - name: Install appVeyor deployment agent
-    win_shell: msiexec /i AppveyorDeploymentAgent.msi /quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY="test234234234" DEPLOYMENT_GROUP="testgroup" >> c:\AppveyorDeploymentAgent.log
+    win_shell: msiexec /i AppveyorDeploymentAgent.msi /quiet /qn /norestart /log install.log ENVIRONMENT_ACCESS_KEY={{ appveyor_environment_access_key }} DEPLOYMENT_GROUP={{ appveyor_deployment_group }} >> c:\AppveyorDeploymentAgent.log
     args:
       chdir: c:\
       creates: install.log
