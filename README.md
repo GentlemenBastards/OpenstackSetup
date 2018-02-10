@@ -15,7 +15,7 @@ Create a folder: keys and place the GB-OS-key file within.
 `ansible-playbook openstack_compute.yml -i environments/staging/inventory.yml`
 
 ### Ansible on windows
-`ansible-playbook openstack_provision.yml -i environments/test2/inventory.yml`  
+`ansible-playbook openstack_provision.yml -i environments/test2/inventory.yml --ask-vault-pass`  
 
 ### Missing console prompt git bash?
 `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`
