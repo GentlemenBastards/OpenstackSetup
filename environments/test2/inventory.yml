@@ -7,8 +7,8 @@ all:
           ansible_host: 194.47.174.53
         jira:
           ansible_host: 194.47.174.55
-        stag_prod_db:
-          ansible_host: 194.47.174.23
+        # stag_prod_db:
+        #   ansible_host: 194.47.174.23
     windows:
       children:      
         win_server:
@@ -17,3 +17,5 @@ all:
               ansible_host: 194.47.174.13
             production:
               ansible_host: 194.47.174.37
+            jenkins:
+              ansible_host: 194.47.174.23

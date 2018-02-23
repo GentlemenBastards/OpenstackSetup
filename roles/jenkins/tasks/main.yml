@@ -1,0 +1,60 @@
+---
+  
+  # [DEPRECATION WARNING]: The 'restart' parameter causes instability. Use the
+  # 'win_reboot' action conditionally on 'reboot_required' return value instead.
+  # This feature will be removed in version 2.6. Deprecation warnings can be
+  # disabled by setting deprecation_warnings=False in ansible.cfg.
+  
+  - name: Install IIS Web-Server with sub features and management tools
+    win_feature:
+      name: Web-Server
+      state: present
+      #restart: True
+      include_sub_features: True
+      include_management_tools: True
+
+  # - name: Install ASPNET 4.5
+  #   win_feature:
+  #     name: NET-Framework-45-ASPNET
+  #     state: present       
+
+  # - name: chocolatey install .net FW 4.5.2
+  #   win_chocolatey:
+  #     name: dotnet4.5
+  #     state: present
+
+  # - name: chocolatey install .net FW 4.6.1
+  #   win_chocolatey:
+  #     name: dotnet4.6.1
+  #     state: present
+
+  # - name: Remove Default Web Site
+  #   win_iis_website:
+  #     name: "Default Web Site"
+  #     state: absent
+
+  # TODO Only reboot if necessary (see above...)
+  - name: Reboot
+    win_reboot:
+
+  - name: chocolatey install jenkins
+    win_chocolatey:
+      name: jenkins
+      state: present
+
+  # You can pass the custom install directory by using chocolatey's --installargs flag. 
+  # For example:
+  # cinst -ia 'JENKINSDIR="D:\Jenkins"' jenkins
+  # Hope that helps
+
+  - name: chocolatey install chrome
+    win_chocolatey:
+      name: googlechrome
+      state: present
+
+  # - name: Deploy default iisstart.htm file
+  #   template:
+  #     src: iisstart.j2
+  #     dest: c:\inetpub\wwwroot\iisstart.htm
+
+  
